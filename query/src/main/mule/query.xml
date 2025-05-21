@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:salesforce="http://www.mulesoft.org/schema/mule/salesforce"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mule/salesforce/current/mule-salesforce.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="659c16ab-a83d-4e9f-b19d-b17487b11149" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<salesforce:sfdc-config name="Salesforce_Config" doc:name="Salesforce Config" doc:id="ac91d10b-dca5-4d06-b058-f9c71d4c2a36" >
+		<salesforce:basic-connection username="harshitha.s@playful-goat-fq99os.com" password="test1234" securityToken="BlNOVY0phjDFk1UWHD6d8sFnr" />
+	</salesforce:sfdc-config>
+	<flow name="queryFlow" doc:id="ca2aa415-31b6-45b3-b503-353334b137fe" >
+		<http:listener doc:name="Listener" doc:id="d7c03756-3660-4ecc-b0f3-40a090dc200d" path="t3" config-ref="HTTP_Listener_config"/>
+		<salesforce:query doc:name="Query" doc:id="ecabf5d6-f511-499b-95f7-735e1dc2c4d3" config-ref="Salesforce_Config">
+			<salesforce:salesforce-query ><![CDATA[select id,name from account limit 5]]></salesforce:salesforce-query>
+		</salesforce:query>
+		<ee:transform doc:name="Transform Message" doc:id="f6403f67-a301-4941-8775-811fb9f8995a" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="cbd90bc5-54e5-433a-83d9-63d74b5438e6" message="retrived accounts"/>
+		<set-payload value="#[payload]" doc:name="response" doc:id="661b8132-d941-4a9d-acd3-ae8b02655a47" />
+	</flow>
+</mule>
