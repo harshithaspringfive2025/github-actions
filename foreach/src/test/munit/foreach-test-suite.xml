@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="foreach-test-suite.xml" />
+	<munit:test name="foreach-test-suite-foreachFlowTest" doc:id="02ce1648-7bb1-4101-8810-ad524a52d405" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to foreachFlow" doc:id="f0648719-fc9f-4739-8538-b13f9c6bed92" name="foreachFlow"/>
+		</munit:execution>
+	</munit:test>
+	<munit:test name="foreach-test-suite-foreachFlowTest1" doc:id="9da9ee95-6896-4d94-a933-22937f2a76cc" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to foreachFlow" doc:id="5ace245f-5812-4883-a4bd-c2b14860e82f" name="foreachFlow"/>
+		</munit:execution>
+	</munit:test>
+
+</mule>
