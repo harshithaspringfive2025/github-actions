@@ -23,5 +23,6 @@ output application/json
 		<foreach doc:name="For Each" doc:id="72ef014b-4608-400d-91d1-53480903677d" >
 			<logger level="INFO" doc:name="Payload" doc:id="69eb920f-035e-4a98-968f-371b2b8036af" message="payload = #[payload]"/>
 		</foreach>
+		<logger level="INFO" doc:name="Logger" doc:id="d6dd9a13-4009-487f-9065-889c98372230" message='#["CI/CD Test"]'/>
 	</flow>
 </mule>
