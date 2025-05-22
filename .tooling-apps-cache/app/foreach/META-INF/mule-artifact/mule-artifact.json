@@ -1,20 +1,21 @@
 {
   "configs": [
-    "github.xml"
+    "foreach.xml"
   ],
   "secureProperties": [],
   "supportedJavaVersions": [],
   "redeploymentEnabled": true,
-  "name": "com.mycompany:github:1.0.0-SNAPSHOT",
+  "name": "com.mycompany:foreach:1.0.0-SNAPSHOT",
   "minMuleVersion": "4.9.0",
-  "requiredProduct": "MULE",
+  "requiredProduct": "MULE_EE",
   "classLoaderModelLoaderDescriptor": {
     "id": "mule",
     "attributes": {
       "exportedPackages": [],
       "exportedResources": [
         "log4j2.xml",
-        "github.xml"
+        "application-types.xml",
+        "foreach.xml"
       ]
     }
   },
