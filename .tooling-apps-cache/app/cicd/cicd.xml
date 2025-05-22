@@ -10,6 +10,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="cicdFlow" doc:id="6433e483-0729-4610-869b-bf0ae2494590" >
 		<http:listener doc:name="Listener" doc:id="3e4931b6-8461-4381-b3ee-b96fae25114d" config-ref="HTTP_Listener_config" path="/cicd"/>
 		<logger level="INFO" doc:name="Logger" doc:id="17792e14-0aca-465d-a8d2-d38d03b47c6e" message='#["TEST "]'/>
-		<logger level="INFO" doc:name="Logger" doc:id="77b8bbea-8c86-4211-9f6d-19b00c4888de" message='#["Hello iKiller"]'/>
+		<logger level="INFO" doc:name="Logger" doc:id="77b8bbea-8c86-4211-9f6d-19b00c4888de" message='#["Hello icxfgvhbjKiller"]'/>
 	</flow>
 </mule>
