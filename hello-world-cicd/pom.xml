@@ -31,11 +31,11 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<username>harshitha14</username>
-						<password>Harshima@14</password>
+						<uri>https:eu1.//anypoint.mulesoft.com</uri>
+						<username>mukesh_crichard</username>
+						<password>Mukesh@2002</password>
 						<applicationName>cicd-hello-world</applicationName>
-						<environment>Design</environment>
+						<environment>Int</environment>
 						<region>us-east-1</region>
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
