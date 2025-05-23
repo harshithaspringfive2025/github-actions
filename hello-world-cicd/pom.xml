@@ -31,9 +31,9 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHubDeployment>
-						<uri>https:eu1.//anypoint.mulesoft.com</uri>
-						<username>mukesh_crichard</username>
-						<password>Mukesh@2002</password>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<username>abcd</username>
+						<password>xyz</password>
 						<applicationName>cicd-hello-world</applicationName>
 						<environment>Int</environment>
 						<region>us-east-1</region>
