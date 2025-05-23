@@ -50,7 +50,7 @@ jobs:
  
     - name: Build with Maven
  
-      run: mvn -B -f hello-world/pom.xml package
+      run: mvn -B -f hello-world1/pom.xml package
  
     - name: Stamp artifact file name with commit hash
  
@@ -72,7 +72,7 @@ jobs:
  
           name: artifacts
  
-          path: hello-world/target/*.jar
+          path: hello-world1/target/*.jar
  
  
   upload:
@@ -118,13 +118,13 @@ jobs:
 
         ls -l
 
-        ls -l hello-world
+        ls -l hello-world1
 
-        cd hello-world
+        cd hello-world1
  
         mvn deploy \
  
-          -f hello-world/pom.xml \
+          -f hello-world1/pom.xml \
 
           -Dmule.artifact=$artifactName
  
