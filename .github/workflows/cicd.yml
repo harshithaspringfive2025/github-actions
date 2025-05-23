@@ -55,7 +55,7 @@ jobs:
         cd hello-world-cicd
         echo "Current directory: $(pwd)"
         ls -l hello-world-cicd/target/*.jar
-        artifactName=$(ls target/*.jar | head -1)
+        artifactName=$(ls hello-world-cicd/target/*.jar | head -1)
         echo "Deploying artifact: $artifactName"
         mvn -X deploy -DmuleDeploy \
          -Dmule.artifact="$artifactName" \
