@@ -3,6 +3,7 @@ name: Build and Deploy to IMV Cloudhub
 on:
   push :
     branches: 'main'
+    paths: '**/hello-world-cicd/**'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -59,4 +60,5 @@ jobs:
          -Danypoint.username="$USERNAME" \
          -Danypoint.password="$PASSWORD" \
          -DskipTests
+ 
  
