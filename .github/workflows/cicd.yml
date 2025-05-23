@@ -29,7 +29,7 @@ jobs:
         artifactName2=$(ls hello-world-cicd/target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
         mv $artifactName1 $artifactName2
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@master
       with:
           name: artifacts
           path: hello-world-cicd/target/*.jar
@@ -53,12 +53,10 @@ jobs:
         PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
       run: |
         cd hello-world-cicd
-        echo "Current directory: $(pwd)"
-        ls -l target/
-        artifactName=$(ls target/*.jar | head -1)
-        echo "Deploying artifact: $artifactName"
-        mvn deploy -e -X -DmuleDeploy \
-         -Dmule.artifact="$artifactName" \
+        artifactName=$(ls *.jar | head -1)
+        mvn deploy -DmuleDeploy \
+         -Dmule.artifact=$artifactName \
          -Danypoint.username="$USERNAME" \
          -Danypoint.password="$PASSWORD" \
          -DskipTests
+ 
