@@ -4,7 +4,7 @@ name: Build and Deploy to IMV Cloudhub
  
 on:
   push :
-    branches: 'CI-cd'
+    branches: 'main'
     
 jobs:
   build:
