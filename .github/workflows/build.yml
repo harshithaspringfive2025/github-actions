@@ -56,7 +56,7 @@ jobs:
  
       run: |
  
-        artifactName1=$(ls hello-world/target/*.jar | head -1)
+        artifactName1=$(ls hello-world1/target/*.jar | head -1)
  
         commitHash=$(git rev-parse --short "$GITHUB_SHA")
  
