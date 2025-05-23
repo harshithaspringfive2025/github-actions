@@ -30,7 +30,7 @@ jobs:
       run: mvn help:effective-settings
     
     - name: Build with Maven
-      run: mvn -B package --file hello-world/pom.xml
+      run: mvn -B package --file hello-world-cicd/pom.xml
     
     - name: Stamp artifact file name with commit hash
       run: |
@@ -43,7 +43,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
           name: artifacts
-          path: hello-world/target/*.jar
+          path: hello-world-cicd/target/*.jar
           
   deploy:
     needs: build
@@ -69,7 +69,7 @@ jobs:
         USERNAME: ${{ secrets.ANYPOINT_USERNAME }}
         PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
       run: |
-        cd hello-world
+        cd hello-world-cicd
         artifactName=$(ls *.jar | head -1)
         mvn deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
