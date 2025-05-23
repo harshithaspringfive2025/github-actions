@@ -33,7 +33,7 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<username>harshitha14</username>
-						<password>Harshina@14</password>
+						<password>Harshima@14</password>
 						<applicationName>cicd-hello-world</applicationName>
 						<environment>Design</environment>
 						<region>us-east-1</region>
