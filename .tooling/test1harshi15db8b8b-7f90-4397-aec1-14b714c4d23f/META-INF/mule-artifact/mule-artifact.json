@@ -1,11 +1,11 @@
 {
   "configs": [
-    "github.xml"
+    "test1harshi.xml"
   ],
   "secureProperties": [],
   "supportedJavaVersions": [],
   "redeploymentEnabled": true,
-  "name": "com.mycompany:github:1.0.0-SNAPSHOT",
+  "name": "com.mycompany:test1harshi:1.0.0-SNAPSHOT",
   "minMuleVersion": "4.9.0",
   "requiredProduct": "MULE",
   "classLoaderModelLoaderDescriptor": {
@@ -14,8 +14,7 @@
       "exportedPackages": [],
       "exportedResources": [
         "log4j2.xml",
-        "github.xml",
-        "application-types.xml"
+        "test1harshi.xml"
       ]
     }
   },

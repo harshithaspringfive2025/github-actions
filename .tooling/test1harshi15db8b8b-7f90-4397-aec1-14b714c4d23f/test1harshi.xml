@@ -4,11 +4,11 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
-	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="496ba28c-aec9-4a4a-a281-94c127940947" >
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="5abf746c-3cf7-49e2-9f97-ca6d7a15170e" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
-	<flow name="hellospringfiveFlow" doc:id="602a2698-6873-4ea4-9edd-28273231451b" >
-		<http:listener doc:name="Listener" doc:id="774018ea-03d6-4148-b6a5-46159317f1e4" config-ref="HTTP_Listener_config" path="r3"/>
-		<logger level="INFO" doc:name="Logger" doc:id="ae5a798d-255e-4c1a-8bc0-6b76a6b570cd" message='#["JOHN JHhONNY"]'/>
+	<flow name="test1harshiFlow" doc:id="ff82cf6d-e964-4e1f-bbdd-ca3b4a8b1b0c" >
+		<http:listener doc:name="Listener" doc:id="3d9827f0-ad82-4282-91c8-8dd10c19bea4" />
+		<logger level="INFO" doc:name="Logger" doc:id="72e6b09e-bd53-43fe-9ab0-bb9f1e2fa4d6" />
 	</flow>
 </mule>
