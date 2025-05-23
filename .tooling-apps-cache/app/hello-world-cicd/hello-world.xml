@@ -4,6 +4,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
 	<flow name="hello-worldFlow" doc:id="a9093f4d-1c49-43cb-883b-1f5527b13977" >
-		<logger level="INFO" doc:name="Logger" doc:id="ec27dd91-01f5-471f-ae1f-084178176de4" message='#["Hello Jign"]'/>
+		<logger level="INFO" doc:name="Logger" doc:id="ec27dd91-01f5-471f-ae1f-084178176de4" message='#["Hellodxfcgvhbjnkm Jign"]'/>
 	</flow>
 </mule>
