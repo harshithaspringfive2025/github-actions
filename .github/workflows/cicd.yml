@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: actions/cache@v3
       with:
         path: ~/.m2/repository
@@ -18,33 +18,31 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Print effective-settings (optional)
-      run: mvn help:effective-settings
     - name: Build with Maven
-      run: mvn -B package --file hello-world-cicd/pom.xml
+      run: mvn -B package --file pom.xml -DskipMunitTests
     - name: Stamp artifact file name with commit hash
       run: |
-        artifactName1=$(ls hello-world-cicd/target/*.jar | head -1)
+        artifactName1=$(ls target/*.jar | head -1)
         commitHash=$(git rev-parse --short "$GITHUB_SHA")
-        artifactName2=$(ls hello-world-cicd/target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
+        artifactName2=$(ls target/*.jar | head -1 | sed "s/.jar/-$commitHash.jar/g")
         mv $artifactName1 $artifactName2
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v3
       with:
           name: artifacts
-          path: hello-world-cicd/target/*.jar
+          path: target/*.jar
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:    
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: actions/cache@v3
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
-    - uses: actions/download-artifact@master
+    - uses: actions/download-artifact@v3
       with:
         name: artifacts
     - name: Deploy to Sandbox
@@ -52,14 +50,9 @@ jobs:
         USERNAME: ${{ secrets.ANYPOINT_USERNAME }}
         PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
       run: |
-        cd hello-world-cicd
-        echo "Current directory: $(pwd)"
-        echo "Artifact found: $artifactName"
-        ls -l hello-world-cicd/target/*.jar
-        artifactName=$(ls hello-world-cicd/target/*.jar | head -1)
-        echo "Deploying artifact: $artifactName"
+        artifactName=$(ls *.jar | head -1)
         mvn -X deploy -DmuleDeploy \
          -Dmule.artifact="$artifactName" \
          -Danypoint.username="$USERNAME" \
          -Danypoint.password="$PASSWORD" \
-         -DskipTests
+ 
