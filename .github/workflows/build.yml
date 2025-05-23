@@ -125,8 +125,6 @@ jobs:
         mvn deploy \
  
           -f hello-world/pom.xml \
- 
-          -s hello-world/.maven/settings.xml \
 
           -Dmule.artifact=$artifactName
  
