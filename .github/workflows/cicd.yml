@@ -1,5 +1,5 @@
 # This workflow will build a MuleSoft project and deploy to CloudHub
-name: Build and Deploy to IMV Cloudhub
+name: Build and Deploy to Anypoint Cloudhub
 on:
   push :
     branches: 'main'
