@@ -113,6 +113,14 @@ jobs:
       run: |
  
         artifactName=$(ls *.jar | head -1)
+
+        echo "Artifact found: $artifactName"
+
+        ls -l
+
+        ls -l hello-world
+
+        cd hello-world
  
         mvn deploy \
  
@@ -161,14 +169,6 @@ jobs:
       run: |
  
         artifactName=$(ls *.jar | head -1)
-
-        echo "Artifact found: $artifactName"
-
-        ls -l
-
-        ls -l hello-world
-
-        cd hello-world
  
         mvn deploy -DmuleDeploy \
  
