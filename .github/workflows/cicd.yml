@@ -70,9 +70,12 @@ jobs:
         PASSWORD: ${{ secrets.ANYPOINT_PASSWORD }}
       run: |
         cd hello-world-cicd
-        artifactName=$(ls *.jar | head -1)
-        mvn deploy -DmuleDeploy \
-         -Dmule.artifact=$artifactName \
+        echo "Current directory: $(pwd)"
+        ls -l target/
+        artifactName=$(ls target/*.jar | head -1)
+        echo "Deploying artifact: $artifactName"
+        mvn -X deploy -DmuleDeploy \
+         -Dmule.artifact="$artifactName" \
          -Danypoint.username="$USERNAME" \
          -Danypoint.password="$PASSWORD" \
          -DskipTests
