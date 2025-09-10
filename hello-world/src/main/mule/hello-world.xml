@@ -3,5 +3,5 @@
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
-	<logger level="INFO" doc:name="Initial Logger" doc:id="df3f7026-4975-4785-bd44-c3a231641f56" message="Hello world" />
+	<logger level="INFO" doc:name="Initial Logger" doc:id="df3f7026-4975-4785-bd44-c3a231641f56" message="Hello world 1" />
 </mule>
