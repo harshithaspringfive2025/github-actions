@@ -3,7 +3,7 @@ name: Build and Deploy to Anypoint Cloudhub
 on:
   push :
     branches: 'main'
-    paths: '**/hello-world-cicd/**'
+    paths: '**/hello-world/**'
 jobs:
   build:
     runs-on: ubuntu-latest
